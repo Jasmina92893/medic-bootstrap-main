@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-container container">
+    <div class="logo">
+      <a href="index.html">AnalizGO</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="appointment.html">Забрать анализы</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+      <a href="admin-login.html" class="admin-btn">Админ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Registration Form -->
+<section class="registration" style="padding:60px 0; text-align:center;">
+  <div class="container" style="max-width:500px; margin:auto; background:#fff; padding:40px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+    <h2>Регистрация</h2>
+    <form action="/register" method="POST" style="display:flex; flex-direction:column; gap:20px; margin-top:20px;">
+      <input type="text" name="fullName" placeholder="ФИО" required style="padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px;">
+      <input type="email" name="email" placeholder="Email" required style="padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px;">
+      <input type="password" name="password" placeholder="Пароль" required style="padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px;">
+      <button type="submit" class="btn large-btn" style="font-size: 1.5rem; font-weight: 700;">Зарегистрироваться</button>
+
+    </form>
+    <p style="margin-top:15px;">Уже есть аккаунт? <a href="patient-login.html">Войти</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 AnalizGO. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

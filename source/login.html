@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    .main-nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .main-nav ul li a:hover,
+    .main-nav ul li a.active {
+      color: #007bff;
+    }
+    .main-nav .admin-menu {
+      list-style: none;
+      margin-left: 20px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    .admin-btn {
+      padding: 8px 16px;
+      background-color: #0066ff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .admin-btn:hover {
+      background-color: #3399ff;
+    }
+
+    /* Login form */
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+      margin: 50px auto;
+    }
+    .login-container h1 {
+      margin-bottom: 30px;
+      color: #007bff;
+      font-size: 2rem;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .register-link {
+      margin-top: 15px;
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .register-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 991px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .main-nav .admin-menu {
+        margin-left: 0;
+      }
+      .login-container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Горизонтальное меню -->
+  <header class="site-header">
+  <div class="header-container container">
+    <div class="logo">
+      <a href="index.html">AnalizGO</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="appointment.html">Забрать анализы</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+      <a href="admin-login.html" class="admin-btn">Админ</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <h1>Вход</h1>
+    <form action="dashboard.html" method="POST">
+      <input type="text" name="username" placeholder="Имя пользователя" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+    </form>
+    <a href="register.html" class="register-link">Если нет аккаунта — зарегистрироваться</a>
+  </div>
+
+</body>
+</html>
