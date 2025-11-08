@@ -1,0 +1,96 @@
+/* Общие стили */
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333; /* текст серый */
+    line-height: 1.6;
+    background-color: #f9f9f9; /* фон страницы светлый */
+}
+
+/* Секция записи на приём */
+.appointment-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* белый блок */
+}
+
+/* Заголовки секции */
+.section-title h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1d3557; /* основной синий, как на about.css */
+}
+
+.section-title p {
+    font-size: 1rem;
+    color: #555; /* серый текст */
+}
+
+/* Форма */
+.contact-area .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-area .form-control:focus {
+    border-color: #457b9d; /* светлый синий при фокусе */
+    box-shadow: 0 0 5px rgba(69,123,157,0.3);
+    outline: none;
+}
+
+.contact-area select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='gray' d='M4 6l4 4 4-4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+/* Текстовая область */
+.contact-area textarea.form-control {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Кнопка */
+.contact-area .btn.large-btn {
+    background-color: #1d3557; /* основной синий */
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-area .btn.large-btn:hover {
+    background-color: #457b9d; /* светлый синий при наведении */
+    color: #fff;
+}
+
+/* Изображение справа */
+.appointment-image-holder img {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 991px) {
+    .appointment-section {
+        padding: 50px 20px;
+    }
+    
+    .section-title h3 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-area .btn.large-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+}

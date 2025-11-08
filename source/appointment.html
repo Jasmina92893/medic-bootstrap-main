@@ -1,77 +1,91 @@
+<link rel="stylesheet" href="css/appointment.css">
+
+
 @@include('header.htm')
+<link rel="stylesheet" href="css/appointment.css">
 
 @@include('blocks/navigation.htm', {"appointment": "active"})
 
-@@include('blocks/page-title.htm',{ "title" : "appointment" })
+@@include('blocks/page-title.htm',{"title":"Запись на приём"})
 
-<!-- Section -->
-<section class="section style-three pb-0">
+<!-- Appointment Section / Запись на приём -->
+<section class="section appointment-section pb-0" aria-labelledby="appointment-title" lang="ru">
   <div class="container">
     <div class="row">
+      <!-- Form Column -->
       <div class="col-lg-6 order-1 order-lg-0">
         <div class="contact-area style-two pl-0 pr-0 pr-lg-4">
           <div class="section-title">
-            <h3>Request <span>Appointment</span></h3>
+            <h3 id="appointment-title">Записаться на <span>приём</span></h3>
+            <p>Пожалуйста, заполните форму ниже. После отправки вы получите подтверждение на Email или SMS.</p>
           </div>
-          <form name="contact_form" class="default-form contact-form" action="!#" method="post">
+          
+          <form name="appointment_form" class="default-form contact-form" action="!#" method="post">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input class="form-control" type="text" name="Name" placeholder="Name" required="">
+                  <input class="form-control" type="text" name="full_name" placeholder="ФИО" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" type="email" name="Email" placeholder="Email" required="">
+                  <input class="form-control" type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                  <select class="form-control" name="subject">
-                    <option>Departments</option>
-                    <option>Diagnostic</option>
-                    <option>Psychological</option>
-                  </select>
+                  <input class="form-control" type="text" name="phone" placeholder="Телефон" required>
                 </div>
               </div>
+              
               <div class="col-md-6">
                 <div class="form-group">
-                  <input class="form-control" type="text" name="Phone" placeholder="Phone" required="">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" type="text" name="Date" placeholder="Date" required="" id="datepicker" autocomplete="off">
+                  <input class="form-control" type="text" name="date" placeholder="Дата приёма" required id="datepicker" autocomplete="off">
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                 </div>
                 <div class="form-group">
-                  <select class="form-control" name="subject">
-                    <option>Doctor</option>
-                    <option>Diagnostic</option>
-                    <option>Psychological</option>
+                  <select class="form-control" name="department" required>
+                    <option value="">Выберите отделение</option>
+                    <option value="diagnostic">Диагностическое</option>
+                    <option value="psychological">Психологическое</option>
+                    <option value="general">Общее</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" name="doctor" required>
+                    <option value="">Выберите врача</option>
+                    <option value="doctor1">Доктор 1</option>
+                    <option value="doctor2">Доктор 2</option>
+                    <option value="doctor3">Доктор 3</option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-12">
+              
+              <div class="col-12">
                 <div class="form-group">
-                  <textarea class="form-control" name="form_message" placeholder="Your Message" required=""></textarea>
+                  <textarea class="form-control" name="message" placeholder="Ваше сообщение (необязательно)"></textarea>
                 </div>
                 <div class="form-group text-center">
-                  <button type="submit" class="btn-style-one">submit now</button>
+                  <button type="submit" class="btn large-btn">Отправить заявку</button>
                 </div>
               </div>
             </div>
           </form>
         </div>
       </div>
+
+      <!-- Image Column -->
       <div class="col-lg-6 mb-4 mb-lg-0 order-0 order-lg-1">
         <div class="appointment-image-holder ml-0 ml-lg-4">
           <figure>
-            <img loading="lazy" class="w-100" src="images/background/appoinment.jpg" alt="Appointment">
+            <img loading="lazy" class="w-100" src="images/background/appointment.jpg" alt="Запись на приём">
           </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Section -->
 
+<!-- Team Section / Врачи -->
 @@include('blocks/team.htm')
 
+<!-- Contact / FAQ -->
 @@include('blocks/footer.htm')
 
 @@include('footer.htm')
