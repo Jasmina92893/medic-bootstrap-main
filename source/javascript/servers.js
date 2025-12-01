@@ -1,4 +1,4 @@
-// servers.js
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -7,21 +7,21 @@ const { Pool } = require("pg");
 const app = express();
 const port = 3000;
 
-// Middleware
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Подключение к PostgreSQL
+
 const pool = new Pool({
-  user: "postgres",       // твой пользователь
-  host: "localhost",      // сервер БД
-  database: "hospital",   // твоя база
-  password: "75554446",   // пароль к PostgreSQL
+  user: "postgres",       
+  host: "localhost",      
+  database: "hospital",   
+  password: "75554446",   
   port: 5432
 });
 
-// Проверка соединения с БД
+
 pool.connect((err, client, release) => {
   if (err) {
     return console.error('Ошибка при подключении к БД:', err.stack);
@@ -30,11 +30,11 @@ pool.connect((err, client, release) => {
   release();
 });
 
-// Маршрут для вставки данных из формы
+
 app.post("/submit", async (req, res) => {
   const { fio, email, phone, date, analysis, doctor, message } = req.body;
 
-  // Валидация обязательных полей
+
   if (!fio || !email || !phone || !date || !analysis || !doctor) {
     return res.status(400).json({ 
       success: false, 
@@ -60,5 +60,5 @@ app.post("/submit", async (req, res) => {
   }
 });
 
-// Запуск сервера
+
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
